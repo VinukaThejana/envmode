@@ -18,7 +18,6 @@ To use the `EnvMode` crate in your Rust application, add the following dependenc
 ```toml
 [dependencies]
 env_mode = "0.1.0"
-serde = "1.0"
 ```
 
 ## Usage

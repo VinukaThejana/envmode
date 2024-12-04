@@ -1,6 +1,6 @@
 [package]
 name = "envmode"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Vinuka Kodituwakku <vinuka.t@pm.me>"]
 description = "A Library to know and manage the current working environment of the application."
@@ -12,3 +12,4 @@ documentation = "https://docs.rs/envmode"
 
 [dependencies]
 serde = { version = "1.0.215", features = ["derive"] }
+validator = { version = "0.19.0", features = ["derive"] }

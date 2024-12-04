@@ -1,5 +1,7 @@
 use serde::Deserialize;
+use std::borrow::Cow;
 use std::sync::Arc;
+use validator::ValidationError;
 
 /// Represent the environment mode of the application
 #[derive(Debug, Deserialize)]
@@ -44,4 +46,16 @@ impl EnvMode {
     pub fn is_valid(mode: &str) -> bool {
         Self::is_dev(mode) || Self::is_prd(mode) || Self::is_stg(mode)
     }
+}
+
+pub fn verify(mode: &str) -> Result<(), ValidationError> {
+    if !EnvMode::is_valid(mode) {
+        return Err(
+            ValidationError::new("env_mode").with_message(Cow::Owned(String::from(
+                "Please provide a valid environment mode",
+            ))),
+        );
+    }
+
+    Ok(())
 }

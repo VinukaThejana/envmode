@@ -1,0 +1,14 @@
+[package]
+name = "envmode"
+version = "0.1.0"
+edition = "2021"
+authors = ["Vinuka Kodituwakku <vinuka.t@pm.me>"]
+description = "A Library to know and manage the current working environment of the application."
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/VinukaThejana/envmode"
+homepage = "https://github.com/VinukaThejana/envmode"
+documentation = "https://docs.rs/envmode"
+
+[dependencies]
+serde = { version = "1.0.215", features = ["derive"] }

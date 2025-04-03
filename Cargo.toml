@@ -1,6 +1,6 @@
 [package]
 name = "envmode"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Vinuka Kodituwakku <vinuka.t@pm.me>"]
 description = "A Library to know and manage the current working environment of the application."

@@ -26,6 +26,27 @@ impl From<&Arc<str>> for EnvMode {
     }
 }
 
+impl From<&str> for EnvMode {
+    fn from(value: &str) -> Self {
+        match value {
+            "dev" => EnvMode::Dev,
+            "prd" => EnvMode::Prd,
+            "stg" => EnvMode::Stg,
+            _ => unreachable!("invalid environment mode"),
+        }
+    }
+}
+
+impl From<EnvMode> for String {
+    fn from(value: EnvMode) -> Self {
+        match value {
+            EnvMode::Dev => "dev".to_string(),
+            EnvMode::Prd => "prd".to_string(),
+            EnvMode::Stg => "stg".to_string(),
+        }
+    }
+}
+
 impl EnvMode {
     // Check if the mode is development
     pub fn is_dev(mode: &str) -> bool {
